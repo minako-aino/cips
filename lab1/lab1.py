@@ -5,17 +5,21 @@ import numpy as np
 # write to a file
 f = open("lab1.txt", "a")
 f.write(datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
-f.write('\n')
 
 
 # case A
 arrayA = np.random.rand(4, 5, 7)
-print(arrayA)
+
+f.write("\nA:\n")
+f.write(str(arrayA))
+
 
 # case B
 arrayB = np.around(arrayA)
 arrayB = arrayB.astype(int)
-print(arrayB)
+
+f.write("\nB:\n")
+f.write(str(arrayB))
 
 # case C
 arrayC = np.empty((4, 5, 7))
@@ -33,8 +37,10 @@ for a in range(4):
         elif arrayA[a][b][c] >= 0:
             arrayC[a][b][c] = 1
 arrayC = arrayC.astype(int)
-print(arrayC)
+f.write("\nC:\n")
+f.write(str(arrayC))
 
+f.close()
 
 """print("A:\n", array)
 f.write(str(array))
