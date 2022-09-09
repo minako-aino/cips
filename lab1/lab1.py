@@ -41,29 +41,3 @@ f.write("\nC:\n")
 f.write(str(arrayC))
 
 f.close()
-
-"""print("A:\n", array)
-f.write(str(array))
-f.write('\n')
-
-
-
-for a in range(7):
-  for b in range(5):
-      for c in range(4):
-        array[a][b][c] = round(array[a][b][c])
-print("B:\n", array)
-f.write(str(array))
-f.write('\n')
-
-# case C
-for a in range(7):
-  for b in range(5):
-      for c in range(4):
-        if array1[a][b][c] >= 0.9:
-            array1[a][b][c]
-
-#f.write()
-#f.close()
-
-"""
