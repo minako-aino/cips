@@ -1,6 +1,6 @@
-import random
 from datetime import datetime
 import numpy as np
+
 
 def grades(num):
     if num >= 0.9:
@@ -57,6 +57,7 @@ w1 = 1
 w2 = 1
 w3 = 1
 
+
 def sum_with_coefs(array, w1=1, w2=1, w3=1):
     sum = 0
     for a in range(4):
@@ -71,56 +72,12 @@ def sum_with_coefs(array, w1=1, w2=1, w3=1):
 
 # case A
 a = sum_with_coefs(arrayA, w1, w2, w3)
-print(grades(a/140))
+print("Grade A:", grades(a/140))
 
 # case B
 b = sum_with_coefs(arrayB, w1, w2, w3)
-print(grades(b/140))
+print("Grade B:",grades(b/140))
 
 # case C
 c = np.sum(arrayC)/140
-print(round(c))
-
-
-#print(res3)
-
-#print(np.sum(np.sum(arrayC, axis = 0))/140)
-"""a = np.sum(arrayA[0, :, :]) + np.sum(arrayA[:, :, 0]) + np.sum(arrayA[:, 0, :])
-print(arrayA)
-print(1)
-print(arrayA[0, :, :])
-print(grades(a/140))
-# case A
-sumA1 = w1 * np.sum(arrayA,axis = 0) + w2 * np.sum(arrayA,axis = 1) + w3 * np.sum(arrayA,axis = 2)
-print(sumA1)
-
-sumA = np.sum(arrayA)
-print(sumA)
-#print(sumA/140)
-res1 = grades(sumA/140)
-print(res1)
-
-sumB = np.sum(arrayB)
-#print(sumB/140)
-res2 = grades(sumB/140)
-print(res2)
-"""
-"""sum3 = np.sum(arrayC)
-print(sum3)
-res3 = sum3/140
-#print(res3)
-res3 = round(res3)
-#print(res3)
-
-
-a = np.sum(arrayC[0, :, :]) + np.sum(arrayC[:, :, 0]) + np.sum(arrayC[:, 0, :])
-print(np.sum(arrayC[0, :, :]), np.sum(arrayC[:, :, 0]), np.sum(arrayC[:, 0, :]))
-
-print("-----")
-print(a)
-#a = round(a/140)
-#print(a)"""
-
-
-
-
+print("Grade C:", round(c))
