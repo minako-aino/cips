@@ -8,17 +8,40 @@ f.write(datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 f.write('\n')
 
 
-array3 = np.random.rand(4, 5, 7)
-print(array3)
-"""
 # case A
-array = [[[random.random() for col in range(4)] for col in range(5)] for row in range(7)]
-print("A:\n", array)
+arrayA = np.random.rand(4, 5, 7)
+print(arrayA)
+
+# case B
+arrayB = np.around(arrayA)
+arrayB = arrayB.astype(int)
+print(arrayB)
+
+# case C
+arrayC = np.empty((4, 5, 7))
+for a in range(4):
+  for b in range(5):
+      for c in range(7):
+        if arrayA[a][b][c] >= 0.9:
+            arrayC[a][b][c] = 5
+        elif arrayA[a][b][c] >= 0.7:
+            arrayC[a][b][c] = 4
+        elif arrayA[a][b][c] >= 0.5:
+            arrayC[a][b][c] = 3
+        elif arrayA[a][b][c] >= 0.3:
+            arrayC[a][b][c] = 2
+        elif arrayA[a][b][c] >= 0:
+            arrayC[a][b][c] = 1
+arrayC = arrayC.astype(int)
+print(arrayC)
+
+
+"""print("A:\n", array)
 f.write(str(array))
 f.write('\n')
 
-# case B
-array = 1
+
+
 for a in range(7):
   for b in range(5):
       for c in range(4):
@@ -35,5 +58,6 @@ for a in range(7):
             array1[a][b][c]
 
 #f.write()
-#f.close()"""
+#f.close()
 
+"""
