@@ -81,3 +81,33 @@ print("Grade B:",grades(b/140))
 # case C
 c = np.sum(arrayC)/140
 print("Grade C:", round(c))
+
+# Task 3
+print("331:", arrayA[2][2][0], arrayB[2][2][0], arrayC[2][2][0])
+print("453:", arrayA[3][4][2], arrayB[3][4][2], arrayC[3][4][2])
+print("452:", arrayA[3][4][1], arrayB[3][4][1], arrayC[3][4][1])
+print("114:", arrayA[0][0][3], arrayB[0][0][3], arrayC[0][0][3])
+print("141:", arrayA[0][3][0], arrayB[0][3][0], arrayC[0][3][0])
+
+# Task 5
+stuff = []
+all_small = a[a < 0.75]
+amount = np.count_nonzero(a < 0.75)
+print(amount)
+for i in all_small:
+    arr = np.where(a == i)
+    res = [int(x.astype(int)) for x in arr]
+    stuff.append(res)
+
+b = np.array(stuff)
+for i in range(4):
+    print(i + 1, " ", (b[:, 0] == i).sum())
+print("-----------")
+
+for i in range(5):
+    print(i + 1, " ", (b[:, 1] == i).sum())
+print("-----------")
+
+for i in range(7):
+    print(i + 1, " ", (b[:, 2] == i).sum())
+print("-----------")
