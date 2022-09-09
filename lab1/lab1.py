@@ -58,14 +58,53 @@ w2 = 1
 w3 = 1
 
 # case A
-sum1 = np.sum(arrayA)
-res1 = sum1/140
+
+#print(np.sum(np.sum(arrayC, axis = 0))/140)
+"""a = np.sum(arrayA[0, :, :]) + np.sum(arrayA[:, :, 0]) + np.sum(arrayA[:, 0, :])
+print(arrayA)
+print(1)
+print(arrayA[0, :, :])
+print(grades(a/140))
+# case A
+sumA1 = w1 * np.sum(arrayA,axis = 0) + w2 * np.sum(arrayA,axis = 1) + w3 * np.sum(arrayA,axis = 2)
+print(sumA1)
+
+sumA = np.sum(arrayA)
+print(sumA)
+#print(sumA/140)
+res1 = grades(sumA/140)
 print(res1)
 
-sum2 = np.sum(arrayB)
-res2 = sum2/140
+sumB = np.sum(arrayB)
+#print(sumB/140)
+res2 = grades(sumB/140)
 print(res2)
+"""
 sum3 = np.sum(arrayC)
+print(sum3)
 res3 = sum3/140
+#print(res3)
 res3 = round(res3)
-print(res3)
+#print(res3)
+
+
+a = np.sum(arrayC[0, :, :]) + np.sum(arrayC[:, :, 0]) + np.sum(arrayC[:, 0, :])
+print(np.sum(arrayC[0, :, :]), np.sum(arrayC[:, :, 0]), np.sum(arrayC[:, 0, :]))
+
+print("-----")
+print(a)
+#a = round(a/140)
+#print(a)
+
+
+def sum_with_coefs(array, w1=1, w2=1, w3=1):
+    sum = 0
+    for a in range(4):
+        sum *= w1
+        for b in range(5):
+            sum *= w2
+            for c in range(7):
+                sum *= w3
+                sum += array[a][b][c]
+    return sum
+
